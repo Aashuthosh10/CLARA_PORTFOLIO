@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import TechStack from './components/TechStack';
+import DemoSection from './components/DemoSection';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
@@ -10,14 +11,14 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-50 font-sans selection:bg-neon-cyan/30">
-      
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-neon-purple">
-            Clara
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Clara" className="h-10 w-auto object-contain mix-blend-screen" />
           </div>
-          
+
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-slate-300 hover:text-white transition-colors">Features</a>
           </div>
@@ -26,7 +27,7 @@ const App = () => {
 
       <main>
         <Hero />
-        
+
         {/* About Section - Quick Insert */}
         <section className="py-20 bg-slate-950">
           <div className="container mx-auto px-6 text-center">
@@ -39,15 +40,25 @@ const App = () => {
 
         <Features />
 
+        <DemoSection />
+
         <TechStack />
 
-        {/* Video Placeholder */}
+        {/* Video Section */}
         <section className="py-20 bg-slate-900 text-center">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-10">See Clara in Action</h2>
-            <div className="max-w-4xl mx-auto aspect-video bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 relative overflow-hidden group">
-               <div className="absolute inset-0 bg-gradient-to-tr from-neon-purple/20 to-transparent opacity-50 group-hover:opacity-75 transition-opacity" />
-               <span className="text-slate-500 font-medium z-10">[Demonstration Video Placeholder]</span>
+            <div className="max-w-4xl mx-auto aspect-video bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 relative overflow-hidden group shadow-2xl shadow-neon-cyan/10">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/H1gFCuGoMFk"
+                title="Clara Demonstration"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-2xl"
+              ></iframe>
             </div>
           </div>
         </section>
@@ -55,31 +66,31 @@ const App = () => {
         {/* GitHub CTA */}
         <section className="py-24 bg-gradient-to-b from-slate-900 to-indigo-950/20">
           <div className="container mx-auto px-6 text-center">
-             <h2 className="text-4xl font-bold mb-8">Ready to explore the code?</h2>
-             <a 
-               href="#" 
-               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all transform hover:scale-105"
-             >
-               <Github size={24} />
-               See the Complete Project
-             </a>
+            <h2 className="text-4xl font-bold mb-8">Ready to explore the code?</h2>
+            <a
+              href="https://github.com/adithya-h2/Claraaaa.git"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all transform hover:scale-105"
+            >
+              <Github size={24} />
+              See the Complete Project
+            </a>
           </div>
         </section>
 
         {/* LinkedIn CTA */}
         <section className="py-24 bg-slate-900 border-t border-slate-800">
           <div className="container mx-auto px-6 text-center">
-             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Get In Touch</h2>
-             <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
-               Have a question or want to get in touch? Connect with us on LinkedIn.
-             </p>
-             <a 
-               href="#" 
-               className="inline-flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#006396] transition-all transform hover:scale-105 shadow-lg shadow-blue-900/20"
-             >
-               <Linkedin size={24} />
-               Connect on LinkedIn
-             </a>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Get In Touch</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
+              Have a question or want to get in touch? Connect with us on LinkedIn.
+            </p>
+            <a
+              href="https://www.linkedin.com/groups/15508001/"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#006396] transition-all transform hover:scale-105 shadow-lg shadow-blue-900/20"
+            >
+              <Linkedin size={24} />
+              Connect on LinkedIn
+            </a>
           </div>
         </section>
       </main>
